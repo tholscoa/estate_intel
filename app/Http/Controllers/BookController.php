@@ -150,7 +150,7 @@ class BookController extends Controller
             }
         }
 
-        return response()->json(['status_code' => Response::HTTP_OK, 'status' => "success", "message"=>"The book ". $update_book[1]['name'] ." was updated successfully", 'data' => $update_book[1]], Response::HTTP_CREATED);
+        return response()->json(['status_code' => Response::HTTP_OK, 'status' => "success", "message"=>"The book ". $update_book[1]['name'] ." was updated successfully", 'data' => $update_book[1]], Response::HTTP_OK);
 
     }
 
@@ -161,7 +161,7 @@ class BookController extends Controller
             return response()->json(['status_code' => Response::HTTP_INTERNAL_SERVER_ERROR, 'status' => "fail", 'data' => $delete[1]], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
-        return response()->json(['status_code' => Response::HTTP_OK, 'status' => "success", "message"=>"The book '$delete[1]' was deleted successfully", 'data' => []], Response::HTTP_CREATED);
+        return response()->json(['status_code' => Response::HTTP_OK, 'status' => "success", "message"=>"The book '$delete[1]' was deleted successfully", 'data' => []], Response::HTTP_OK);
 
     }
 
@@ -172,7 +172,7 @@ class BookController extends Controller
             return response()->json(['status_code' => Response::HTTP_INTERNAL_SERVER_ERROR, 'status' => "fail", 'data' => $show[1]], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
-        return response()->json(['status_code' => Response::HTTP_OK, 'status' => "success", 'data' => $show[1]], Response::HTTP_CREATED);
+        return response()->json(['status_code' => Response::HTTP_OK, 'status' => "success", 'data' => $show[1]], Response::HTTP_OK);
 
     }
 }
